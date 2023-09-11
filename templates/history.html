@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<ul>
+    {% regroup events by time as scan_by_date %}
+    {% for time in scan_by_date %}
+    <div class="box"><li>
+        <h5>{{ time.grouper}}</h5>
+        <h6>{{user.get_username}}</h6>
+        <hr>
+        {% for item in time.list %}
+        <p>{{item.tag}}</p>
+        {% endfor %}
+    </li></div>
+    {% endfor %}
+</ul>
+{% endblock content %}

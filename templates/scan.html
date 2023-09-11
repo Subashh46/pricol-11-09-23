@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="content2">Scan</h1>
+<form method="post" action="{% url 'my_action_view' %}">
+    {% csrf_token %}
+    <button class="btn btn-outline-info btn-lg content1" type="submit">Scan</button>
+</form>
+{% endblock content %}
