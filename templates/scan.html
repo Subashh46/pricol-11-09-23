@@ -1,8 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<h1 class="content2">Scan</h1>
-<form method="post" action="{% url 'my_action_view' %}">
-    {% csrf_token %}
-    <button class="btn btn-outline-info btn-lg content1" type="submit">Scan</button>
-</form>
+<head>
+<script type="text/javascript">
+        function codeAddress() {
+            window.location.href = {% url 'my_action_view' %};
+        }
+        </script>
+    </head>
+    <body onload="codeAddress();">
+    <div class="content1">
+        <h5>Scanning...</h5>
+        <video autoplay loop muted src="{% static 'loading.jpeg' %}" width="90" height="60">
+        </video>
+    </div>
+    </body>
 {% endblock content %}

@@ -2,7 +2,12 @@
 {% block content %}
 <br>
 <h2>{{ object.name }}</h2>
-<br>
+<ul>
+    <p>{{ object.plant }}</p>
+    <p>{{ object.line }}</p>
+    <p>{{ object.machine_id }}</p>
+</ul>
+<hr>
 <ul>
 {% for status in status %}
     {% if status.machine == machine %}

@@ -27,7 +27,8 @@
 
 .button2 {
   background-color: white;
-  color: black;
+  color: #008CBA;
+  padding: 6px 10px;
   border: 2px solid #008CBA;
 }
 
@@ -85,7 +86,7 @@
 .box {
   float: left;
   width: 20%;
-  height: 3%;
+  height: 1%;
   padding-bottom:17%;
   padding-top:10px;
   margin: 1%;
@@ -98,7 +99,7 @@
   display: inline-block;
   text-align: center;
   min-width: 300px;
-  min-height: 150px;
+  min-height: 100px;
   padding-top:10px;
   border: solid black 2px;
   border-radius: 10px;
@@ -130,4 +131,17 @@ width :100px;
 height:100px;
 margin-left:-50px;
 margin-top:-50px;
+}
+
+.static {
+  position: static;
+  max-width: 500px;
+}
+
+.center {
+  position: absolute;
+  max-width: 500px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }

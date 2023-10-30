@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <br>
-{% for machine in machine_list%}
+{% for plant in plant_list %}
     <ul>
-        <a href="{% url 'machine_detail' machine.pk%}" class="button button_machine" tabindex="-1" role="button" aria-disabled="true">
-            {{ machine.name }}</a>
+        <a href="{% url 'plant_detail' plant.pk%}" class="button button_machine" tabindex="-1" role="button" aria-disabled="true">
+            {{ plant.name }}</a>
     </ul>
 {% endfor %}
 {% endblock %}
-
 

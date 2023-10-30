@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 <ul>
-    {% regroup events by time as scan_by_date %}
-    {% for time in scan_by_date %}
-    <div class="box"><li>
-        <h5>{{ time.grouper}}</h5>
-        <h6>{{user.get_username}}</h6>
-        <hr>
-        {% for item in time.list %}
-        <p>{{item.tag}}</p>
+    {% for item in scan_list %}
+    <div class="none"><li>
+        <p>{{item.time}}</p>
+        <p>{{user.get_username}}</p>
+        {% for machine in machine %}
+        {% if machine.tag_id == item.tag %}
+        <p>{{machine.machine_id}}</p>
+        <a href="{% url 'machine_detail' machine.pk%}" class="button button2 btn-" tabindex="-1" role="button" aria-disabled="true">
+            Details</a>
+        {% endif %}
         {% endfor %}
-    </li></div>
+        </div>
     {% endfor %}
-</ul>
+    </ul>
 {% endblock content %}
