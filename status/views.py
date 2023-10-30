@@ -4,7 +4,6 @@ from .models import Machine, Status, Scan
 from .utils import scan, time_now
 
 
-# Create your views here.
 class HomePageView(ListView):
     model = Machine
     template_name = 'home.html'
